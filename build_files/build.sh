@@ -12,7 +12,7 @@ set -ouex pipefail
 dnf5 install -y cascadia-code-fonts 
 dnf5 install -y tmux fzf fd-find bat eza 
 dnf5 install -y zsh zsh-autosuggestions zsh-syntax-highlighting
-dnf5 install -y cliphist
+dnf5 install -y cliphist wtype
 # Waiting for version 0.12
 #dnf5 install -y neovim
 # Use a COPR Example:
