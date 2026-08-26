@@ -16,7 +16,7 @@ dnf -y copr disable yalter/niri
 dnf install -y noctalia
 dnf install -y foot foot-terminfo
 dnf install -y cascadia-code-fonts 
-dnf install -y tmux fzf fd-find bat eza 
+dnf install -y tmux fzf fd-find bat eza ripgrep
 dnf install -y zsh zsh-autosuggestions zsh-syntax-highlighting
 dnf install -y cliphist wtype
 dnf install -y neovim
