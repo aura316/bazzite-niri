@@ -9,30 +9,15 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf5 install -y foot foot-terminfo
-dnf5 install -y cascadia-code-fonts 
-dnf5 install -y tmux fzf fd-find bat eza 
-dnf5 install -y zsh zsh-autosuggestions zsh-syntax-highlighting
-dnf5 install -y cliphist wtype
-# Waiting for version 0.12
-#dnf5 install -y neovim
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+dnf -y copr enable yalter/niri
+dnf -y install niri
+dnf -y copr disable yalter/niri
 
-dnf5 -y copr enable yalter/niri
-dnf5 -y install niri
-dnf5 -y copr disable yalter/niri
+dnf install -y noctalia
+dnf install -y foot foot-terminfo
+dnf install -y cascadia-code-fonts 
+dnf install -y tmux fzf fd-find bat eza 
+dnf install -y zsh zsh-autosuggestions zsh-syntax-highlighting
+dnf install -y cliphist wtype
+dnf install -y neovim
 
-# Fetch noctalia from terra
-dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
-dnf5 -y install noctalia-shell
-dnf5 config-manager setopt terra.enabled=0 terra-extras.enabled=0
-
-
-#### Example for enabling a System Unit File
-
-# systemctl enable podman.socket
